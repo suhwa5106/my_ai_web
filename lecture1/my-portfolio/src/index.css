@@ -1,0 +1,105 @@
+/* CSS 초기화 */
+* {
+  box-sizing: border-box;
+}
+
+/* HTML, Body 초기화 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Root 앱 컨테이너 설정 */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  /* Primary Colors */
+  --color-primary: #E84A8A;
+  --color-primary-light: #F06A9E;
+  --color-primary-dark: #D63A7A;
+
+  /* Secondary Colors */
+  --color-secondary: #FDF5F5;
+  --color-accent: #8B6FC0;
+
+  /* Background Colors */
+  --color-bg-primary: #FFF8F8;
+  --color-bg-secondary: #FDF5F5;
+  --color-bg-tertiary: #FADADD;
+
+  /* Text Colors */
+  --color-text-primary: #2D2D2D;
+  --color-text-secondary: #5A5A5A;
+  --color-text-muted: #888888;
+
+  /* Interactive Colors */
+  --color-button-primary: #E84A8A;
+  --color-button-hover: #D63A7A;
+  --color-link: #E84A8A;
+  --color-link-hover: #8B6FC0;
+
+  /* Border Colors */
+  --color-border-light: #F5C6D0;
+  --color-border-medium: #E84A8A;
+
+  /* Status Colors */
+  --color-success: #4CAF50;
+  --color-warning: #FFC107;
+  --color-error: #E84A8A;
+  --color-info: #8B6FC0;
+
+  /* Font */
+  font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+/* 배경색 유틸리티 */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+
+/* 텍스트색 유틸리티 */
+.text-primary { color: var(--color-primary); }
+.text-dark { color: var(--color-text-primary); }
+.text-muted { color: var(--color-text-muted); }
+
+/* 테두리 유틸리티 */
+.border-primary { border-color: var(--color-border-medium); }
+.border-light { border-color: var(--color-border-light); }
+
+/* 그라데이션 */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-tertiary) 100%);
+}
