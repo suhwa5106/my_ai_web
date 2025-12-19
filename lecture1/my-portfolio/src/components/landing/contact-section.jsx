@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import GuestbookForm from './guestbook-form.jsx';
+import GuestbookList from './guestbook-list.jsx';
 
 /**
  * ContactSection 컴포넌트
@@ -15,6 +15,12 @@ import CardContent from '@mui/material/CardContent';
  * <ContactSection />
  */
 function ContactSection() {
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
+  const handleSubmitSuccess = () => {
+    setRefreshTrigger((prev) => prev + 1);
+  };
+
   return (
     <Box
       sx={{
@@ -23,37 +29,33 @@ function ContactSection() {
       }}
     >
       <Container maxWidth="md">
-        <Card
+        <Typography
+          variant="h2"
           sx={{
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-            border: '1px solid',
-            borderColor: 'divider',
+            fontSize: { xs: '1.75rem', md: '2.25rem' },
+            fontWeight: 600,
+            color: 'text.primary',
+            mb: 1,
+            textAlign: 'center',
           }}
         >
-          <CardContent sx={{ p: { xs: 3, md: 4 }, textAlign: 'center' }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontSize: { xs: '1.5rem', md: '2rem' },
-                fontWeight: 600,
-                color: 'text.primary',
-                mb: 2,
-              }}
-            >
-              Contact
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: { xs: '1rem', md: '1.1rem' },
-                color: 'text.secondary',
-                lineHeight: 1.8,
-              }}
-            >
-              여기는 Contact 섹션입니다. 연락처, SNS, 간단한 메시지 폼이 들어갈 예정입니다.
-            </Typography>
-          </CardContent>
-        </Card>
+          Contact
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: { xs: '1rem', md: '1.1rem' },
+            color: 'text.secondary',
+            lineHeight: 1.6,
+            textAlign: 'center',
+            mb: 4,
+          }}
+        >
+          방문해 주셔서 감사합니다. 방명록을 남겨주세요!
+        </Typography>
+
+        <GuestbookForm onSubmitSuccess={handleSubmitSuccess} />
+        <GuestbookList refreshTrigger={refreshTrigger} />
       </Container>
     </Box>
   );
