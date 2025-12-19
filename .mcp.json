@@ -10,6 +10,20 @@
       "env": {
         "NETLIFY_PERSONAL_ACCESS_TOKEN": "nfp_iyJX6BGAqSW9Y7mffNzKvKdmc2ZJY8L430ea"
       }
+    },
+    "supabase": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=dobzlizsxxqzofrjvpqp"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "sbp_1c34858fe3506e2047614c46057bd3330eb522db"
+      }
     }
   }
 }

@@ -38,3 +38,6 @@ yarn-error.log*
 # Windows special files
 nul
 **/nul
+
+# MCP config (contains sensitive tokens)
+.mcp.json
