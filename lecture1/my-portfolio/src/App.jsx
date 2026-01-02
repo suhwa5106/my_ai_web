@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Navigation from './components/common/navigation.jsx';
 import HomePage from './pages/home-page.jsx';
 import AboutPage from './pages/about-page.jsx';
-import ProjectsPage from './pages/projects-page.jsx';
+import ProjectsPageShadcn from './pages/projects-page-shadcn.jsx';
 
 /**
  * App 컴포넌트
@@ -32,7 +32,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects" element={<ProjectsPageShadcn />} />
           </Routes>
         </Box>
       </Box>

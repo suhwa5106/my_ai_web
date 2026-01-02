@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* CSS 초기화 */
 * {
   box-sizing: border-box;
@@ -17,6 +19,31 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    --primary: 338 76% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 38% 98%;
+    --secondary-foreground: 0 0% 18%;
+    --muted: 0 38% 98%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 263 35% 72%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 26% 87%;
+    --input: 0 26% 87%;
+    --ring: 338 76% 60%;
+    --radius: 0.5rem;
+  }
 }
 
 :root {
@@ -79,27 +106,4 @@ a {
 
 a:hover {
   color: var(--color-link-hover);
-}
-
-/* 배경색 유틸리티 */
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-accent { background-color: var(--color-accent); }
-
-/* 텍스트색 유틸리티 */
-.text-primary { color: var(--color-primary); }
-.text-dark { color: var(--color-text-primary); }
-.text-muted { color: var(--color-text-muted); }
-
-/* 테두리 유틸리티 */
-.border-primary { border-color: var(--color-border-medium); }
-.border-light { border-color: var(--color-border-light); }
-
-/* 그라데이션 */
-.gradient-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-}
-
-.gradient-soft {
-  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-tertiary) 100%);
 }
